@@ -34,3 +34,9 @@ C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\obj\Debug\ne
 C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\obj\Debug\net8.0\ecommerceApp.pdb
 C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\obj\Debug\net8.0\ecommerceApp.genruntimeconfig.cache
 C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\obj\Debug\net8.0\ref\ecommerceApp.dll
+C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\bin\Debug\net8.0\DnsClient.dll
+C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\bin\Debug\net8.0\Snappier.dll
+C:\Users\Lethabo\Documents\GitHub\SEN371-ecommerce-app\ecommerceApp\bin\Debug\net8.0\ZstdSharp.dll

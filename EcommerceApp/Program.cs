@@ -1,3 +1,7 @@
+using ecommerceApp.Data;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,14 +11,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<MongoDBService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        // Explicitly forces Swagger UI to map to the default endpoint name
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ecommerceApp v1");
+    });
 }
+
 
 app.UseHttpsRedirection();
 
