@@ -1,0 +1,30 @@
+name: CI - Backend Tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install backend dependencies
+        working-directory: Milestone2_BackendDevelopment/backend
+        run: npm install
+
+      - name: Install test dependencies
+        working-directory: Milestone5_Testing/backend_tests
+        run: npm install
+
+      - name: Run automated tests
+        working-directory: Milestone5_Testing/backend_tests
+        run: npm test

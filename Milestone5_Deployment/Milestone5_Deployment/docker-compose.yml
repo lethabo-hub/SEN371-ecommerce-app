@@ -1,0 +1,43 @@
+# One-command local environment: MongoDB + Backend API + Frontend
+# Run from the repository root with:  docker compose -f Milestone5_Deployment/docker-compose.yml up --build
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: shopwave-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build:
+      context: ../Milestone2_BackendDevelopment/backend
+    container_name: shopwave-backend
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/shopwave
+      - JWT_SECRET=local_dev_secret_change_me
+      - JWT_EXPIRES_IN=7d
+      - NODE_ENV=development
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: ../Milestone4_FrontendDevelopment/frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:5000/api/v1
+    container_name: shopwave-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  mongo-data:
