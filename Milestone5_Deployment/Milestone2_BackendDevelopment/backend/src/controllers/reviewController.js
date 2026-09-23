@@ -51,7 +51,7 @@ const createProductReview = asyncHandler(async (req, res) => {
     comment,
   });
 
-  await recalculateProductRating(productId);
+  await recalculateProductRating(product._id);
 
   res.status(201).json({ success: true, data: review });
 });

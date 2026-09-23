@@ -30,8 +30,15 @@
     "nodemon": "^3.1.4",
     "supertest": "^7.0.0"
   },
-  "jest": {
+ "jest": {
     "testEnvironment": "node",
-    "testTimeout": 30000
+    "testTimeout": 60000,
+    "setupFiles": [
+      "<rootDir>/tests/setup/env.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/tests/setup/"
+    ]
   }
 }
